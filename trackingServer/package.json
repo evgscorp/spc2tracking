@@ -1,0 +1,28 @@
+{
+  "name": "spc2tracking",
+  "version": "1.0.0",
+  "description": "online traking of the spc2 workshop",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony server.js",
+    "dev": "nodemon --harmony server.js"
+  },
+  "keywords": [
+    "spc2",
+    "tracking"
+  ],
+  "author": "Tokarev Evgeniy",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "hapi": "^16.1.0",
+    "hapi-cron": "0.0.2",
+    "hoek": "^4.1.0",
+    "mongoose": "^4.8.4",
+    "oracledb": "^1.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
