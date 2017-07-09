@@ -1,0 +1,24 @@
+$blue: #3bbfce;
+$margin: 16px;
+.custom-border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $blue;
+}
+
+table.hl {
+  margin: 2em 0;
+  td.ln {
+    text-align: right;
+  }
+}
+
+@mixin rounded_corners ($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+#custom-footer {
+  @include rounded_corners(10px);
+}
