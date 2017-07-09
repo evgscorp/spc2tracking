@@ -26,12 +26,29 @@ class MngMainModel {
       length: row[12],
       cutlength: row[13],
     });
+    if (trow.position>0)
+    {
+      let scoptions={area: trow.area, position: trow.position};
+      this.removeIfRowExists(scoptions, trow).then((srow)=>{
+          Tracking.update(scoptions, srow, {upsert: true}, (err,raw)=>{
+            console.log('TrackingRow saved successfully!'+' area='+trow.area+' position='+trow.position+' options='+scoptions);
+            console.log('The raw response from Mongo was ', raw);
+         });
+       });
+    }
+ }
 
-     Tracking.update({area: trow.area, position: trow.position}, trow, {upsert: true}, (err)=>{
-        console.log('TrackingRow saved successfully!'+' area='+trow.area+' position='+trow.position);
+     removeIfRowExists(scoptions, srow){
+     return new Promise((resolve, reject) => {
+       Tracking.findOne(scoptions,  (err, mrow)=> {
+           if (mrow && typeof mrow === 'object' && mrow._id){
+            //mrow.remove(()=>resolve());
+            srow._id=mrow._id; resolve(srow);
+          } else {resolve(srow);}
+        });
+
      });
-
-  }
+    }
 
     getTrackingRows(){
     return new Promise((resolve, reject) => {
