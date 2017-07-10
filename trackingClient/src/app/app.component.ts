@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'spc 2 traking app';
+  isDarkTheme: boolean = false;
+
+
+
 }

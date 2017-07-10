@@ -4,10 +4,29 @@
     Welcome to {{title}}!!
   </h1>
 
-  <div class="button-row">
-    <button md-button>Flat button</button>
+  <div class="container" fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="start stretch" fxLayoutGap="10px" fxLayoutGap.xs="1px" fxLayoutWrap>
+  <div class="test-item-1" fxFlex="15%">
+      <button md-button>Flat button</button>
+  </div>
+  <div class="test-item-2" fxFlex="20%" fxFlexOrder="3">
     <button md-raised-button>Raised button</button>
-    <button md-fab><md-icon>check</md-icon></button>
+  </div>
+  <div class="test-item-3" fxFlex>
+      <button md-fab><md-icon>check</md-icon></button>
+  </div>
+  <div class="test-item-4" fxFlex>
     <button md-mini-fab><md-icon>check</md-icon></button>
     <i class="material-icons">face</i>
   </div>
+
+</div>
+
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+  <div class="item item-4" fxFlex fxFlexOffset="50px"  fxFlexOffset.xs="0">Item 4</div>
+  <div class="item item-5" fxFlex="200px">Item 5</div>
+</div>

@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule}  from './material/material.module';
-import { AppComponent } from './app.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
+
+import { AppComponent } from './app.component';
 
 
 @NgModule({
@@ -11,7 +13,7 @@ import 'hammerjs';
     AppComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule,MaterialModule
+    BrowserModule, BrowserAnimationsModule,MaterialModule,FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
